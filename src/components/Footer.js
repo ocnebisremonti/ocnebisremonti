@@ -17,7 +17,7 @@ const navLinks = [
 
 const contact = {
   facebook: 'https://www.facebook.com/people/Lavani-Home-%E1%83%9A%E1%83%90%E1%83%95%E1%83%90%E1%83%9C%E1%83%98-%E1%83%A1%E1%83%90%E1%83%AE%E1%83%9A%E1%83%98/61555905846393/',
-  email: 'info@remont.ge',
+  email: 'dream.remonti@mail.ru',
   phone: '+995 574 12 93 34',
 }
 

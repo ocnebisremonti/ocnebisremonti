@@ -58,7 +58,7 @@ function StatItem({ value, suffix, label }) {
   }, [value])
 
   return (
-    <div className="stat-item" ref={ref} id='about'>
+    <div className="stat-item" ref={ref} >
       <span className="stat-number">
         {count}
         {suffix}
@@ -70,7 +70,7 @@ function StatItem({ value, suffix, label }) {
 
 function About() {
   return (
-    <div className="about-container">
+    <div className="about-container" id='about'>
       <h2 className="about-header">{content.left.header}</h2>
 
       <div className="about-columns">

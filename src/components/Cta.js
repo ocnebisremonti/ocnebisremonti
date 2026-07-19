@@ -30,7 +30,7 @@ function Cta() {
             <span className="cta-button-icon">
               <Phone size={20} strokeWidth={2} />
             </span>
-            <span>დაგვირეკეთ — {content.phone}</span>
+            <span>დაგვირეკეთ</span>
           </a>
         </div>
       </div>

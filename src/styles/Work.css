@@ -4,8 +4,9 @@
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 100px 0 40px; /* ქვედა padding შემცირებული */
+  padding:20px 0 40px;
 }
+
 .work-header {
   font-family: "FiraGO", sans-serif;
   font-feature-settings: "case" on;
@@ -15,22 +16,40 @@
   margin-bottom: 48px;
 }
 
-/* MASONRY GRID */
-.work-masonry {
-  column-count: 3;
-  column-gap: 20px;
+.work-sliders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-.work-item {
-  break-inside: avoid;
-  margin-bottom: 20px;
+/* ერთი სლაიდერი */
+.slider {
+  position: relative;
+}
+
+.slider-viewport {
+  width: 100%;
+  aspect-ratio: 4 / 5;
   border-radius: 1.25rem;
   overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.55s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.slider-item {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   position: relative;
 }
 
-.work-item::after {
+.slider-item::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -39,36 +58,153 @@
   transition: opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.work-item:hover::after {
+.slider-item:hover::after {
   opacity: 1;
 }
 
-.work-img {
+.slider-img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.work-item:hover .work-img {
-  transform: scale(1.06);
+.slider-item:hover .slider-img {
+  transform: scale(1.05);
+}
+
+/* ისრები */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2E2E2E;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  z-index: 2;
+}
+
+.slider-arrow:hover {
+  background: #A8552E;
+  color: #fff;
+}
+
+.slider-arrow-left {
+  left: 12px;
+}
+
+.slider-arrow-right {
+  right: 12px;
+}
+
+/* Dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.slider-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+              width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.slider-dot.active {
+  background: #A8552E;
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* LIGHTBOX */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 40px;
+  animation: lightbox-fade-in 0.3s ease-in-out;
+  cursor: zoom-out;
+}
+
+@keyframes lightbox-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 1rem;
+  cursor: default;
+  animation: lightbox-zoom-in 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes lightbox-zoom-in {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* ============================
    ტაბლეტი
    ============================ */
 @media (max-width: 1024px) {
-  .work-masonry {
-    column-count: 2;
-    column-gap: 16px;
-  }
-
-  .work-item {
-    margin-bottom: 16px;
-  }
-
   .work-header {
     font-size: 2rem;
+  }
+
+  .work-sliders {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
@@ -80,27 +216,25 @@
     padding: 60px 0;
   }
 
-  .work-masonry {
-    column-count: 2;
-    column-gap: 10px;
-  }
-
-  .work-item {
-    margin-bottom: 10px;
-    border-radius: 0.85rem;
-  }
-
   .work-header {
     font-size: 1.5rem;
     margin-bottom: 32px;
   }
-}
 
-/* ============================
-   ძალიან პატარა ტელეფონი
-   ============================ */
-@media (max-width: 380px) {
-  .work-masonry {
-    column-count: 1;
+  .work-sliders {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .slider-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .lightbox-close {
+    top: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
   }
 }

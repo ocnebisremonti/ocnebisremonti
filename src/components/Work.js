@@ -4,14 +4,14 @@ import React from 'react'
 import '../styles/Work.css'
 
 const photos = [
-  '/work/work1.jpeg',
-  '/work/work2.jpeg',
-  '/work/work3.jpeg',
-  '/work/work4.jpeg',
-  '/work/work5.jpeg',
-  '/work/work6.jpeg',
-  '/work/work7.jpeg',
-  '/work/work8.jpeg',
+  '/work/work1.jpg',
+  '/work/work2.jpg',
+  '/work/work3.jpg',
+  '/work/work4.jpg',
+  '/work/work5.jpg',
+  '/work/work6.jpg',
+  '/work/work7.jpg',
+  '/work/work8.jpg',
 ]
 
 function Work() {

@@ -249,3 +249,33 @@
     border-radius: 0 0 var(--btn-radius) var(--btn-radius);
   }
 }
+
+/* ============================
+   TEXT ENTRANCE ANIMATION
+   ============================ */
+.landing-heading,
+.landing-description,
+.landing-buttons {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: landing-fade-up 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.landing-heading {
+  animation-delay: 0.1s;
+}
+
+.landing-description {
+  animation-delay: 0.25s;
+}
+
+.landing-buttons {
+  animation-delay: 0.4s;
+}
+
+@keyframes landing-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

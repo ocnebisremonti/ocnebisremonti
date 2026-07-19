@@ -7,7 +7,7 @@ const navLinks = [
     { name: 'მთავარი', href: '#' },
      { name: 'ჩვენ შესახებ', href: '#about' },
     { name: 'სერვისები', href: '#services' },
-    { name: 'ნამუშევრები', href: '#' },
+    { name: 'ნამუშევრები', href: '#work' },
     { name: 'კონტაქტი', href: '#contact' },
 ]
 

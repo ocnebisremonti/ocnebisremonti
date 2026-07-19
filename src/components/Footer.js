@@ -4,7 +4,7 @@ import React from 'react'
 import { Mail, Phone } from 'lucide-react'
 import '../styles/Footer.css'
 
-const logo = '/logoo.PNG'
+const logo = '/logoo.png'
 
 
 const navLinks = [

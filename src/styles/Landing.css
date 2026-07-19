@@ -43,7 +43,7 @@
 .landing-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.689));
+  background: linear-gradient(rgba(0, 0, 0, 0.256), rgba(0, 0, 0, 0.595));
   z-index: 1;
 }
 
@@ -220,6 +220,12 @@
     padding: 14px 12px;
     font-size: 13px;
   }
+
+  .landing-overlay {
+
+  background: linear-gradient(rgba(0, 0, 0, 0.564), rgba(0, 0, 0, 0.595));
+}
+
 }
 
 /* ============================

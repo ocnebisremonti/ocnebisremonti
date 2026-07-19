@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+.cta-container {
+  width: 100%;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-card {
+  position: relative;
+  width: 90%;
+  max-width: 1400px;
+  padding: 100px 80px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  isolation: isolate;
+
+  /* glassmorphism */
+  background: rgba(46, 46, 46, 0.921);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Glow ეფექტები ფონზე */
+.cta-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cta-glow-1 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(168, 85, 46, 0.5) 0%, transparent 70%);
+  top: -220px;
+  left: -120px;
+}
+
+.cta-glow-2 {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(217, 131, 79, 0.35) 0%, transparent 70%);
+  bottom: -220px;
+  right: -100px;
+}
+
+/* Glass shine — ცოცავი შუქი, დახრილი, უსასრულოდ მეორდება */
+.cta-card::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #0000 0%,
+    #ffffff0a 20%,
+    #d9834f14 50%,
+    #ffffff0a 80%,
+    #0000 100%
+  );
+  transform: skew(-25deg);
+  animation: cta-glass-shine 5s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes cta-glass-shine {
+  0% {
+    opacity: 0;
+    left: -100%;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+}
+
+.cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #D9834F;
+  margin-bottom: 22px;
+  padding: 8px 18px;
+  border: 1px solid rgba(217, 131, 79, 0.3);
+  border-radius: 100px;
+  background: rgba(217, 131, 79, 0.08);
+}
+
+.cta-title {
+  font-family: "FiraGO", sans-serif;
+  font-feature-settings: "case" on;
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 36px;
+  max-width: 560px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 18px 36px;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #A8552E 0%, #D9834F 100%);
+  color: #fff;
+  font-family: "FiraGO", sans-serif;
+  font-feature-settings: "case" on;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  box-shadow:
+    0 8px 24px rgba(168, 85, 46, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              letter-spacing 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 14px 36px rgba(168, 85, 46, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.05em;
+}
+
+.cta-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================
+   ტაბლეტი
+   ============================ */
+@media (max-width: 1024px) {
+  .cta-card {
+    padding: 80px 40px;
+  }
+
+  .cta-title {
+    font-size: 2.1rem;
+  }
+}
+
+/* ============================
+   ტელეფონი
+   ============================ */
+@media (max-width: 768px) {
+  .cta-container {
+    padding: 56px 0;
+  }
+
+  .cta-card {
+    width: 92%;
+    padding: 56px 20px;
+    border-radius: 1.5rem;
+  }
+
+  .cta-title {
+    font-size: 1.6rem;
+  }
+
+  .cta-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================
+   პატარა ტელეფონი
+   ============================ */
+@media (max-width: 380px) {
+  .cta-title {
+    font-size: 1.35rem;
+  }
+
+  .cta-glow-1,
+  .cta-glow-2 {
+    width: 300px;
+    height: 300px;
+  }
+}

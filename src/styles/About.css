@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+.about-container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.about-header {
+  font-family: "FiraGO", sans-serif;
+  font-feature-settings: "case" on;
+  font-size: 2.25rem;
+  margin-bottom: 48px;
+}
+
+.about-columns {
+  display: flex;
+  gap: 60px;
+}
+
+.left {
+  flex: 1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.about-btn {
+  cursor: pointer;
+  font-feature-settings: "case" on;
+  letter-spacing: .03em;
+  border: none;
+  font-family: FiraGO, sans-serif;
+  font-weight: 700;
+  transition: background-color .4s, letter-spacing .4s;
+
+  margin-top: 28px;
+  padding: 12px 28px;
+  font-size: 15px;
+  width: fit-content;
+
+  color: #fff;
+  background-color: #a8552e;
+  border-radius: 1rem;
+}
+
+.about-btn:hover {
+  background-color: #8f4526;
+  letter-spacing: .05em;
+}
+
+.right {
+  flex: 1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
+}
+
+.logos-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.logo-img {
+  height: 85px;
+  width: auto;
+  object-fit: contain;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.stat-number {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.03em;
+
+  background: linear-gradient(135deg, #A8552E 0%, #D9834F 60%, #A8552E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, rgba(168, 85, 46, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.stat-label {
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #555;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ============================
+   ტაბლეტი (ემთხვევა landing-ის 1024px breakpoint-ს)
+   ============================ */
+@media (max-width: 1024px) {
+  .about-columns {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-header {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .about-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ============================
+   ტელეფონი (ემთხვევა landing-ის 768px breakpoint-ს)
+   ============================ */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 60px 0;
+  }
+
+  .about-header {
+    font-size: 1.5rem;
+  }
+
+  .about-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .about-columns {
+    gap: 32px;
+  }
+}
+
+/* ============================
+   პატარა ტელეფონი
+   ============================ */
+@media (max-width: 480px) {
+  .stats-container {
+    gap: 32px;
+  }
+
+  .stat-number {
+    font-size: 2.25rem;
+  }
+
+  .logos-container {
+    gap: 20px;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+
+  .about-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

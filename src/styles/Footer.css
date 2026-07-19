@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.footer-container {
+  position: relative;
+  background-color: #2E2E2E;
+  color: #fff;
+  font-family: "FiraGO", sans-serif;
+  padding: 80px 190px 28px;
+  overflow: hidden;
+}
+
+/* ნატიფი luxury glow ფონზე */
+.footer-glow {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(168, 85, 46, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+  padding-bottom: 48px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  max-width: 340px;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.footer-logo-line {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, #A8552E, #D9834F);
+  margin: 16px 0 20px;
+}
+
+.footer-tagline {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 28px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+  transition: border-color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              background-color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.footer-social-icon:hover {
+  background-color: #A8552E;
+  border-color: #A8552E;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-col-label {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #A8552E;
+  margin-bottom: 22px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-nav-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-feature-settings: "case" on;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              padding-left 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.footer-nav-link:hover {
+  color: #D9834F;
+  padding-left: 6px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+  transition: color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.footer-contact-item:hover {
+  color: #D9834F;
+}
+
+.footer-contact-item svg {
+  flex-shrink: 0;
+  color: #A8552E;
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-credit {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.footer-credit:hover {
+  color: #D9834F;
+}
+
+/* ============================
+   ტაბლეტი
+   ============================ */
+@media (max-width: 1023px) {
+  .footer-container {
+    padding: 64px 48px 24px;
+  }
+
+  .footer-top {
+    gap: 40px;
+  }
+}
+
+/* ============================
+   ტელეფონი
+   ============================ */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 56px 24px 24px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 36px;
+    padding-bottom: 36px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ============================
+   პატარა ტელეფონი
+   ============================ */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 48px 16px 20px;
+  }
+}

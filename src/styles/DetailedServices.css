@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+.ds-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.ds-header {
+  font-family: "FiraGO", sans-serif;
+  font-feature-settings: "case" on;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 56px;
+  color: #1a1a1a;
+}
+
+.ds-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-row {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.ds-row:first-child {
+  border-top: 1px solid #e5e5e5;
+}
+
+.ds-row-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: padding 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.ds-num {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #A8552E;
+  min-width: 32px;
+}
+
+.ds-title {
+  flex: 1;
+  font-family: "FiraGO", sans-serif;
+  font-feature-settings: "case" on;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.ds-price {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #A8552E;
+  white-space: nowrap;
+}
+
+.ds-chevron {
+  color: #999;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  flex-shrink: 0;
+}
+
+.ds-row.is-open .ds-chevron {
+  transform: rotate(180deg);
+  color: #A8552E;
+}
+
+.ds-row.is-open .ds-title {
+  color: #A8552E;
+}
+
+/* გაშლადი კონტენტი — grid-template-rows ტრიკი smooth ანიმაციისთვის */
+.ds-row-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.ds-row.is-open .ds-row-body {
+  grid-template-rows: 1fr;
+}
+
+.ds-row-body-inner {
+  overflow: hidden;
+}
+
+.ds-description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  padding: 0 8px 20px 64px;
+}
+
+.ds-items {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 32px;
+  padding: 0 8px 32px 64px;
+}
+
+.ds-item {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+  padding-left: 18px;
+  position: relative;
+}
+
+.ds-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #A8552E;
+}
+
+/* ============================
+   ტაბლეტი
+   ============================ */
+@media (max-width: 1024px) {
+  .ds-header {
+    font-size: 2rem;
+  }
+
+  .ds-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* ============================
+   ტელეფონი
+   ============================ */
+@media (max-width: 768px) {
+  .ds-container {
+    padding: 60px 0;
+  }
+
+  .ds-header {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  .ds-row-header {
+    gap: 12px;
+    padding: 20px 4px;
+  }
+
+  .ds-num {
+    font-size: 0.85rem;
+    min-width: 24px;
+  }
+
+  .ds-title {
+    font-size: 1.05rem;
+  }
+
+  .ds-price {
+    display: none; /* მობილურზე ვმალავთ, ადგილს ვზოგავთ */
+  }
+
+  .ds-description,
+  .ds-items {
+    padding-left: 24px;
+  }
+
+  .ds-items {
+    grid-template-columns: 1fr;
+  }
+}

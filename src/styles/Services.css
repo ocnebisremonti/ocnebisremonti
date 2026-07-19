@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+.services-container {
+  width: 90%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+}
+
+.service-header {
+  font-family: "FiraGO", sans-serif;
+  font-feature-settings: "case" on;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* ============================
+   BENTO GRID
+   ============================ */
+.bento-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 16px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.bento-item {
+  position: relative;
+  border-radius: 1.5rem;
+  padding: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.bento-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 55%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  z-index: 0;
+  transition: background 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.bento-item:hover {
+  transform: translateY(-6px);
+}
+
+.bento-item:hover::before {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.1) 55%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.row-span-2 {
+  grid-row: span 2;
+}
+
+.bento-num {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 1;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.bento-content {
+  position: relative;
+  z-index: 1;
+}
+
+.bento-title {
+  font-family: "FiraGO", sans-serif;
+  font-feature-settings: "case" on;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.bento-description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0.9;
+  max-width: 90%;
+}
+
+/* დიდ (col-span-2 row-span-2) ბარათებში ცოტა უფრო დიდი ტიპოგრაფია */
+.row-span-2 .bento-title {
+  font-size: 1.75rem;
+}
+
+.row-span-2 .bento-description {
+  font-size: 0.95rem;
+  max-width: 70%;
+}
+
+/* ============================
+   ტაბლეტი
+   ============================ */
+@media (max-width: 1024px) {
+  .bento-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+  }
+
+  .col-span-2 {
+    grid-column: span 2;
+  }
+
+  .service-header {
+    font-size: 2rem;
+  }
+}
+
+/* ============================
+   ტელეფონი
+   ============================ */
+@media (max-width: 768px) {
+  .services-container {
+    padding: 60px 0;
+  }
+
+  .service-header {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+  }
+
+  .bento-container {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 180px;
+    gap: 12px;
+  }
+
+  .bento-item {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    padding: 18px;
+  }
+
+  .bento-title,
+  .row-span-2 .bento-title {
+    font-size: 1.2rem;
+  }
+
+  .bento-description,
+  .row-span-2 .bento-description {
+    font-size: 0.8rem;
+    max-width: 100%;
+  }
+}

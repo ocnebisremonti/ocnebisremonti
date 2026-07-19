@@ -178,6 +178,10 @@
   color: #D9834F;
 }
 
+.footer-logo-img{
+    height: 50px;
+}
+
 /* ============================
    ტაბლეტი
    ============================ */
@@ -189,6 +193,9 @@
   .footer-top {
     gap: 40px;
   }
+  .footer-logo-img{
+    height: 40px;
+}
 }
 
 /* ============================
@@ -213,6 +220,10 @@
     justify-content: center;
     text-align: center;
   }
+
+  .footer-logo-img{
+    height: 38px;
+}
 }
 
 /* ============================
@@ -222,4 +233,9 @@
   .footer-container {
     padding: 48px 16px 20px;
   }
+
+  .footer-logo-img{
+    height: 30px;
 }
+}
+

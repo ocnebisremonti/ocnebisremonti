@@ -4,6 +4,9 @@ import React from 'react'
 import { Mail, Phone } from 'lucide-react'
 import '../styles/Footer.css'
 
+const logo = '/logoo.PNG'
+
+
 const navLinks = [
   { name: 'მთავარი', href: '#' },
   { name: 'ჩვენ შესახებ', href: '#' },
@@ -44,7 +47,7 @@ function Footer() {
 
       <div className="footer-top">
         <div className="footer-brand">
-          <div className="footer-logo">Remont</div>
+          <div className="footer-logo"><img src={logo} alt="ocnebis saxlis logo" className='footer-logo-img' /></div>
           <div className="footer-logo-line" />
           <p className="footer-tagline">
             თქვენი სივრცის სრულყოფილი გარდაქმნა პროფესიონალი გუნდის მიერ -

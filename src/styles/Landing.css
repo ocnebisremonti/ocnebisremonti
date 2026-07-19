@@ -172,6 +172,8 @@
   .landing-container {
     min-height: 45vh;
     padding: 54px 20px;
+    padding-top: 90px;
+    margin-top: 20px;
   }
 
   .landing-content {

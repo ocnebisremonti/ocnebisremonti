@@ -13,21 +13,43 @@
   align-items: flex-start;
   width: 100%;
   height: 80vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.689)),
-    url('/landing/landing-bg.jpg');
-  background-size: cover;
-  background-position: center;
   color: #fff;
   font-family: "FiraGO", sans-serif;
   padding: 20px;
   margin: 0;
   position: relative;
+  overflow: hidden;
   clip-path: url(#landing-clip);
   z-index: 1;
 }
 
+/* Background slideshow ფენები */
+.landing-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  z-index: 0;
+}
+
+.landing-bg-layer.active {
+  opacity: 1;
+}
+
+/* მუქი overlay — ტექსტის წაკითხვადობისთვის, ყველა background-ზეა */
+.landing-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.689));
+  z-index: 1;
+}
+
 .landing-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -123,8 +145,7 @@
 }
 
 /* ============================
-   ტაბლეტი + მობაილი — clip-path გამორთული,
-   ზუსტად ემთხვევა JS-ის isMobile ბრეიკფოინთს (1024px)
+   ტაბლეტი + მობაილი
    ============================ */
 @media (max-width: 1024px) {
   .landing-container {
@@ -140,7 +161,6 @@
     width: 100%;
     margin-bottom: 24px;
     gap: 16px;
-   
   }
 
   .landing-heading {
@@ -166,7 +186,7 @@
 }
 
 /* ============================
-   ტელეფონი (ტაბლეტის შიდა ქვე-წესი)
+   ტელეფონი
    ============================ */
 @media (max-width: 768px) {
   .landing-container {
@@ -179,8 +199,8 @@
   .landing-content {
     margin-bottom: 20px;
     gap: 14px;
-     text-align: center;
-     align-items: center;
+    text-align: center;
+    align-items: center;
   }
 
   .landing-heading {

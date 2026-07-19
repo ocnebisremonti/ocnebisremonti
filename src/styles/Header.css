@@ -16,6 +16,7 @@ html,body{
   align-items: center;
   justify-content: space-between;
   padding: 5px 190px;
+  position: sticky;
   top: 0;
   z-index: 100;
   background-color: #ffffffeb;

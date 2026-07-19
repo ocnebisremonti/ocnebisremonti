@@ -11,7 +11,14 @@ const content = {
     buttonText: 'იხილეთ სერვისები',
   },
   right: {
-    logos: ['/logos/logo1.jpg', '/logos/logo2.png', '/logos/logo3.png'],
+    logos: [
+      '/logos/logo1.png',
+      '/logos/logo2.png',
+      '/logos/logo3.png',
+      '/logos/logo4.png',
+      '/logos/logo5.PNG',
+      '/logos/logo6.PNG',
+    ],
     stats: [
       { value: 7, suffix: '+', label: 'წელი ბაზარზე' },
       { value: 100, suffix: '+', label: 'კმაყოფილი მომხმარებელი' },
@@ -58,7 +65,7 @@ function StatItem({ value, suffix, label }) {
   }, [value])
 
   return (
-    <div className="stat-item" ref={ref} >
+    <div className="stat-item" ref={ref}>
       <span className="stat-number">
         {count}
         {suffix}
@@ -69,8 +76,11 @@ function StatItem({ value, suffix, label }) {
 }
 
 function About() {
+  // ლოგოების მასივი ორმაგდება, რომ loop უწყვეტი/seamless იყოს
+  const marqueeLogos = [...content.right.logos, ...content.right.logos]
+
   return (
-    <div className="about-container" id='about'>
+    <div className="about-container" id="about">
       <h2 className="about-header">{content.left.header}</h2>
 
       <div className="about-columns">
@@ -93,15 +103,17 @@ function About() {
             ))}
           </div>
 
-          <div className="logos-container">
-            {content.right.logos.map((logo, index) => (
-              <img
-                src={logo}
-                key={index}
-                alt={`partner logo ${index + 1}`}
-                className="logo-img"
-              />
-            ))}
+          <div className="logos-marquee">
+            <div className="logos-track">
+              {marqueeLogos.map((logo, index) => (
+                <img
+                  src={logo}
+                  key={index}
+                  alt={`partner logo ${(index % content.right.logos.length) + 1}`}
+                  className="logo-img"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

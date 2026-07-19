@@ -11,7 +11,7 @@ const navLinks = [
     { name: 'კონტაქტი', href: '#' },
 ]
 
-const logo = '/logooo.png'
+const logo = '/logoo.PNG'
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)

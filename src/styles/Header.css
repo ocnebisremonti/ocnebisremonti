@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 190px;
+  padding: 5px 190px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -38,7 +38,6 @@
   font-weight: 700;
   letter-spacing: 0.03em;
   position: relative;
-  padding-bottom: 6px;
   transition: color 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), 
               letter-spacing 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
@@ -165,6 +164,11 @@
   font-weight: 700; /* საშუალო სიმძიმე */
 }
 
+.logo-image{
+  height: 50px;
+}
+
+
 /* Responsive breakpoint - adjust as needed */
 @media (max-width: 768px) {
   .nav-links-container {
@@ -173,9 +177,6 @@
 
   .hamburger-btn {
     display: flex;
-  }
-  .header-container {
-    padding: 16px 24px;
   }
 }
 
@@ -187,9 +188,7 @@
 
 /* Large desktops / wide screens (1440px+) */
 @media (min-width: 1440px) {
-  .header-container {
-    padding: 20px 240px;
-  }
+
 
   .logo {
     font-size: 26px;
@@ -202,15 +201,13 @@
 
 /* Standard laptops (1024px - 1439px) */
 @media (max-width: 1439px) {
-  .header-container {
-    padding: 16px 120px;
-  }
+
 }
 
 /* Tablets (768px - 1023px) */
 @media (max-width: 1023px) {
   .header-container {
-    padding: 16px 48px;
+    padding: 4px 48px;
   }
 
   .nav-links-container {
@@ -226,8 +223,8 @@
    Your existing rule already handles nav-links-container/hamburger-btn display,
    just adding padding + sidebar tweaks here */
 @media (max-width: 768px) {
-  .header-container {
-    padding: 14px 20px;
+ .header-container {
+    padding: 3px 24px;
   }
 
   .logo {
@@ -238,6 +235,9 @@
     right: -70%;
     padding: 20px;
   }
+   .logo-image{
+  height: 40px;
+}
 }
 
 /* Small phones (max-width: 480px) */
@@ -264,6 +264,9 @@
     width: 24px;
     height: 18px;
   }
+  .logo-image{
+  height: 40px;
+}
 }
 
 /* Very small phones (max-width: 360px) */
@@ -280,8 +283,8 @@
     width: 80%;
     right: -80%;
   }
-}
-
-.logo-image{
+   .logo-image{
   height: 30px;
 }
+}
+

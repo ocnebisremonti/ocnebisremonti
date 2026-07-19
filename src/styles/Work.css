@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.work-container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 0 40px; /* ქვედა padding შემცირებული */
+}
+.work-header {
+  font-family: "FiraGO", sans-serif;
+  font-feature-settings: "case" on;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* MASONRY GRID */
+.work-masonry {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.work-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.work-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%, transparent 40%);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.work-item:hover::after {
+  opacity: 1;
+}
+
+.work-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.work-item:hover .work-img {
+  transform: scale(1.06);
+}
+
+/* ============================
+   ტაბლეტი
+   ============================ */
+@media (max-width: 1024px) {
+  .work-masonry {
+    column-count: 2;
+    column-gap: 16px;
+  }
+
+  .work-item {
+    margin-bottom: 16px;
+  }
+
+  .work-header {
+    font-size: 2rem;
+  }
+}
+
+/* ============================
+   ტელეფონი
+   ============================ */
+@media (max-width: 640px) {
+  .work-container {
+    padding: 60px 0;
+  }
+
+  .work-masonry {
+    column-count: 2;
+    column-gap: 10px;
+  }
+
+  .work-item {
+    margin-bottom: 10px;
+    border-radius: 0.85rem;
+  }
+
+  .work-header {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+  }
+}
+
+/* ============================
+   ძალიან პატარა ტელეფონი
+   ============================ */
+@media (max-width: 380px) {
+  .work-masonry {
+    column-count: 1;
+  }
+}

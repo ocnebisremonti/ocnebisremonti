@@ -13,7 +13,7 @@ const content = {
 
 function Cta() {
   return (
-    <div className="cta-container">
+    <div className="cta-container" id='contact'>
       <div className="cta-card">
         <div className="cta-glow cta-glow-1" />
         <div className="cta-glow cta-glow-2" />

@@ -58,7 +58,7 @@ function StatItem({ value, suffix, label }) {
   }, [value])
 
   return (
-    <div className="stat-item" ref={ref}>
+    <div className="stat-item" ref={ref} id='about'>
       <span className="stat-number">
         {count}
         {suffix}

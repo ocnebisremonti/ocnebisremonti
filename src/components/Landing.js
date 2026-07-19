@@ -64,7 +64,7 @@ function Landing() {
         </defs>
       </svg>
 
-      <div className="landing-wrapper">
+      <div className="landing-wrapper" id='main'>
         <div className="landing-frame">
           <div className="landing-container" ref={containerRef}>
             <div className="landing-content">

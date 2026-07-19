@@ -52,7 +52,7 @@ const bentoClasses = [
 
 function Services() {
   return (
-    <div className="services-container">
+    <div className="services-container" id='services'>
       <h2 className="service-header">{content.header.title}</h2>
 
       <div className="bento-container">

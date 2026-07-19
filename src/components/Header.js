@@ -5,10 +5,10 @@ import '../styles/Header.css'
 
 const navLinks = [
     { name: 'მთავარი', href: '#' },
-     { name: 'ჩვენ შესახებ', href: '#' },
-    { name: 'სერვისები', href: '#' },
+     { name: 'ჩვენ შესახებ', href: '#about' },
+    { name: 'სერვისები', href: '#services' },
     { name: 'ნამუშევრები', href: '#' },
-    { name: 'კონტაქტი', href: '#' },
+    { name: 'კონტაქტი', href: '#contact' },
 ]
 
 const logo = '/logoo.png'

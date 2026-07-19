@@ -86,9 +86,9 @@ function About() {
       <div className="about-columns">
         <div className="left">
           <p className="about-description">{content.left.aboutText}</p>
-          <button className="btn-accent about-btn">
-            {content.left.buttonText}
-          </button>
+          <a href="#services" className="btn-accent about-btn">
+  {content.left.buttonText}
+</a>
         </div>
 
         <div className="right">

@@ -96,10 +96,10 @@ function Landing() {
             </div>
           </div>
 
-          <div className="landing-buttons" ref={buttonsRef}>
-            <button className="btn-dark">იხილეთ სერვისები</button>
-            <button className="btn-accent">დაგვიკავშირდით</button>
-          </div>
+        <div className="landing-buttons" ref={buttonsRef}>
+  <a href="#services" className="btn-dark">იხილეთ სერვისები</a>
+  <a href="tel:+995574129334" className="btn-accent">დაგვიკავშირდით</a>
+</div>
         </div>
       </div>
     </>

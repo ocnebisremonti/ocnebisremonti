@@ -81,8 +81,9 @@
   z-index: 10;
 }
 
-.landing-buttons button {
+.landing-buttons a {
   padding: 12px 24px;
+  text-decoration: none;
   border: none;
   cursor: pointer;
   font-family: "FiraGO", sans-serif;
@@ -179,7 +180,7 @@
     margin-top: 6px;
   }
 
-  .landing-buttons button {
+  .landing-buttons a {
     padding: 14px 22px;
     font-size: 14px;
   }
@@ -215,7 +216,7 @@
     width: 100%;
   }
 
-  .landing-buttons button {
+  .landing-buttons a{
     flex: 1;
     padding: 14px 12px;
     font-size: 13px;

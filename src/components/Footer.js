@@ -18,6 +18,8 @@ const contact = {
   facebook: 'https://www.facebook.com/people/Lavani-Home-%E1%83%9A%E1%83%90%E1%83%95%E1%83%90%E1%83%9C%E1%83%98-%E1%83%A1%E1%83%90%E1%83%AE%E1%83%9A%E1%83%98/61555905846393/',
   email: 'dream.remonti@mail.ru',
   phone: '+995 574 12 93 34',
+  phones: ['+995 574 12 93 34','+995 571 390 510']
+
 }
 
 function FacebookIcon(props) {
@@ -102,16 +104,24 @@ function Footer() {
         </div>
 
         <div className="footer-contact">
-          <span className="footer-col-label">კონტაქტი</span>
-          <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="footer-contact-item">
-            <Phone size={16} strokeWidth={2} />
-            <span>{contact.phone}</span>
-          </a>
-          <a href={`mailto:${contact.email}`} className="footer-contact-item">
-            <Mail size={16} strokeWidth={2} />
-            <span>{contact.email}</span>
-          </a>
-        </div>
+  <span className="footer-col-label">კონტაქტი</span>
+
+  {contact.phones.map((phone, index) => (
+    
+    <a  key={index}
+      href={`tel:${phone.replace(/\s/g, '')}`}
+      className="footer-contact-item"
+    >
+      <Phone size={16} strokeWidth={2} />
+      <span>{phone}</span>
+    </a>
+  ))}
+
+  <a href={`mailto:${contact.email}`} className="footer-contact-item">
+    <Mail size={16} strokeWidth={2} />
+    <span>{contact.email}</span>
+  </a>
+</div>
       </div>
 
       <div className="footer-bottom">

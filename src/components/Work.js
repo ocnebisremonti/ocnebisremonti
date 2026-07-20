@@ -1,20 +1,52 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import '../styles/Work.css'
 
 const sliders = [
-  ['/work/work1.jpg', '/work/work2.jpg', '/work/work3.jpg', '/work/work4.jpg'],
-  ['/work/work21.jpg', '/work/work22.jpg', '/work/work23.jpg'],
+  ['/work/work1.jpg', '/work/work2.jpg', '/work/work3.jpg'],
+  ['/work/work22.jpg', '/work/work21.jpg', '/work/work23.jpg'],
   ['/work/work31.jpg', '/work/work32.jpg', '/work/work33.jpg'],
 ]
 
 function Slider({ photos, onImageClick }) {
   const [current, setCurrent] = useState(0)
+  const intervalRef = useRef(null)
 
   const prev = () => setCurrent((c) => (c === 0 ? photos.length - 1 : c - 1))
   const next = () => setCurrent((c) => (c === photos.length - 1 ? 0 : c + 1))
+
+  // ავტომატური slideshow — ყოველ 4 წამში იცვლება
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setCurrent((c) => (c === photos.length - 1 ? 0 : c + 1))
+    }, 4000)
+    return () => clearInterval(intervalRef.current)
+  }, [photos.length])
+
+  // ხელით ისრებზე/dots-ზე დაწკაპუნებისას ტაიმერი თავიდან იწყება
+  const resetTimer = () => {
+    clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(() => {
+      setCurrent((c) => (c === photos.length - 1 ? 0 : c + 1))
+    }, 4000)
+  }
+
+  const handlePrev = () => {
+    prev()
+    resetTimer()
+  }
+
+  const handleNext = () => {
+    next()
+    resetTimer()
+  }
+
+  const handleDotClick = (index) => {
+    setCurrent(index)
+    resetTimer()
+  }
 
   return (
     <div className="slider">
@@ -35,10 +67,10 @@ function Slider({ photos, onImageClick }) {
         </div>
       </div>
 
-      <button className="slider-arrow slider-arrow-left" onClick={prev} aria-label="წინა">
+      <button className="slider-arrow slider-arrow-left" onClick={handlePrev} aria-label="წინა">
         <ChevronLeft size={22} strokeWidth={2.5} />
       </button>
-      <button className="slider-arrow slider-arrow-right" onClick={next} aria-label="შემდეგი">
+      <button className="slider-arrow slider-arrow-right" onClick={handleNext} aria-label="შემდეგი">
         <ChevronRight size={22} strokeWidth={2.5} />
       </button>
 
@@ -47,7 +79,7 @@ function Slider({ photos, onImageClick }) {
           <button
             key={index}
             className={`slider-dot ${index === current ? 'active' : ''}`}
-            onClick={() => setCurrent(index)}
+            onClick={() => handleDotClick(index)}
             aria-label={`ფოტო ${index + 1}`}
           />
         ))}

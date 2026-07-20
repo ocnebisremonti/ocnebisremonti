@@ -196,6 +196,12 @@
     padding-top: 90px;
     margin-top: 20px;
   }
+  .btn-accent{
+    text-align: center;
+  }
+  .btn-dark{
+    text-align: center;
+  }
 
   .landing-content {
     margin-bottom: 20px;

@@ -24,7 +24,6 @@ export const metadata = {
   creator: 'ოცნების რემონტი',
   publisher: 'ოცნების რემონტი',
 
-  // Open Graph — Facebook, WhatsApp, LinkedIn-ზე გაზიარებისთვის
   openGraph: {
     type: 'website',
     locale: 'ka_GE',
@@ -35,7 +34,7 @@ export const metadata = {
       'პროფესიონალური სარემონტო მომსახურება — ბინის, სახლისა და კომერციული ფართის რემონტი მაღალი ხარისხით.',
     images: [
       {
-        url: '/og-image.jpg', // 1200x630px რეკომენდებული ზომა
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'ოცნების რემონტი',
@@ -43,7 +42,6 @@ export const metadata = {
     ],
   },
 
-  // Twitter Card
   twitter: {
     card: 'summary_large_image',
     title: 'ოცნების რემონტი | სარემონტო მომსახურება საქართველოში',
@@ -68,10 +66,10 @@ export const metadata = {
     apple: '/apple-touch-icon.png',
   },
 
-  // Google Search Console-ის ვერიფიკაციისთვის (მოგვიანებით დაამატებ)
-  // verification: {
-  //   google: 'შენი-verification-კოდი',
-  // },
+  // Google Search Console ვერიფიკაცია
+  verification: {
+    google: 'dz0ihdmKKvw-7JDORqMrpEAQ7YJD50tP7ZBAz4X_gh4',
+  },
 }
 
 export default function RootLayout({ children }) {

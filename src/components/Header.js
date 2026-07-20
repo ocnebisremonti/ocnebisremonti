@@ -27,9 +27,9 @@ function Header() {
   return (
     <div className='header-container'>
 
-      <div className='logo'>
-        <img src={logo} alt="remonti logo"  className='logo-image'/>
-      </div>
+    <a href="#" className="logo">
+  <img src={logo} alt="remonti logo" className="logo-image" />
+</a>
 
       {/* Desktop nav links */}
       <div className="nav-links-container">

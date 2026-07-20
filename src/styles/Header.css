@@ -10,7 +10,11 @@ html,body{
   padding: 0;
   margin: 0;
 }
-
+.logo {
+  text-decoration: none;
+  display: inline-block;
+  /* დანარჩენი წესები უცვლელი, თუ იყო */
+}
 .header-container {
   display: flex;
   align-items: center;

@@ -10,9 +10,15 @@ const content = {
   services: [
     {
       title: 'თეთრი ᲙᲐᲠᲙᲐᲡᲘᲡ ᲠᲔᲛᲝᲜᲢᲘ',
-      num: '02',
+      num: '01',
       img: '/services/service1.jpg',
       description: 'შიდა კედლები აშენებული, კომუნიკაციები შეყვანილი, მზადაა შიდა სამუშაოებისთვის.',
+    },
+     {
+      title: 'ᲨᲐᲕᲘ ᲙᲐᲠᲙᲐᲡᲘᲡ ᲠᲔᲛᲝᲜᲢᲘ',
+      num: '02',
+      img: '/services/service2.jpg',
+      description: 'მხოლოდ მზიდი კონსტრუქცია, საჭიროა ყველა სამუშაოს ნულიდან შესრულება.',
     },
     {
       title: 'კოსმეტიკური რემონტი',
@@ -20,12 +26,7 @@ const content = {
       img: '/services/service3.jpg',
       description: 'ბინის განახლება სწრაფად და ხარისხიანად.',
     },
-    {
-      title: 'ᲨᲐᲕᲘ ᲙᲐᲠᲙᲐᲡᲘᲡ ᲠᲔᲛᲝᲜᲢᲘ',
-      num: '01',
-      img: '/services/service2.jpg',
-      description: 'მხოლოდ მზიდი კონსტრუქცია, საჭიროა ყველა სამუშაოს ნულიდან შესრულება.',
-    },
+   
     {
       title: 'ინტერიერის დიზაინი',
       num: '04',
@@ -43,16 +44,16 @@ const content = {
 
 // bento layout classes, გამოყოფილი content-ისგან
 const bentoClasses = [
-  'col-span-2 row-span-2', // 1
-  'col-span-2',            // 2
-  'col-span-2 row-span-2', // 3
-  '',                      // 4
-  '',                      // 5
+  'col-span-2 row-span-4', // 1
+  'col-span-2 row-span-4', // 2
+  'col-span-4 row-span-2', // 3
+  'col-span-2 row-span-2', // 4
+  'col-span-2 row-span-2', // 5
 ]
 
 function Services() {
   return (
-    <div className="services-container" id='services'>
+    <div className="services-container" id="services">
       <h2 className="service-header">{content.header.title}</h2>
 
       <div className="bento-container">
